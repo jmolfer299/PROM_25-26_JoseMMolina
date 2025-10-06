@@ -12,7 +12,7 @@ class InfoScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Tu Nombre Completo",
+            Text("Jose Maria Molina Fdez-Crehuett",
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
             SizedBox(height: 20),
             Text("https://github.com/jmolfer299/PROM_25-26_JoseMMolina",
