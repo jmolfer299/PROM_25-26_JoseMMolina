@@ -5,6 +5,7 @@ import 'screens/gallery_screen.dart';
 import 'screens/icons_screen.dart';
 import 'screens/images_screen.dart';
 import 'screens/text_screen.dart';
+import 'screens/newimages_screen.dart';
 
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({super.key});
@@ -80,6 +81,16 @@ class DrawerMenu extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => TextScreen()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.image_outlined),
+            title: Text("Nuevas Imágenes"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NewImagesScreen()),
               );
             },
           ),

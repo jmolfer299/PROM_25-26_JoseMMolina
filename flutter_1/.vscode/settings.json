@@ -1,0 +1,11 @@
+{
+  // Activa hot reload automático al guardar desde VS Code (requiere ext. Dart/Flutter)
+  // Valores válidos: "never", "manual", "manualIfDirty", "all", "allIfDirty"
+  "dart.flutterHotReloadOnSave": "all",
+  // Controla hot restart al guardar; normalmente se deja en "never"
+  "dart.flutterHotRestartOnSave": "never"
+  ,
+  // Auto-save para que al guardar se ejecute el hot reload automáticamente
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 500
+}
