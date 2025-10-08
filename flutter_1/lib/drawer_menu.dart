@@ -4,6 +4,7 @@ import 'screens/profile_screen.dart';
 import 'screens/gallery_screen.dart';
 import 'screens/icons_screen.dart';
 import 'screens/images_screen.dart';
+import 'screens/text_screen.dart';
 
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({super.key});
@@ -16,48 +17,70 @@ class DrawerMenu extends StatelessWidget {
           DrawerHeader(
             decoration: BoxDecoration(color: Colors.blue),
             child: Center(
-              child: Text("Menú Principal",
-                  style: TextStyle(color: Colors.white, fontSize: 20)),
+              child: Text(
+                "Menú Principal",
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
             ),
           ),
           ListTile(
             leading: Icon(Icons.info),
             title: Text("Información"),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => InfoScreen()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => InfoScreen()),
+              );
             },
           ),
           ListTile(
             leading: Icon(Icons.person),
             title: Text("Perfil"),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ProfileScreen()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfileScreen()),
+              );
             },
           ),
           ListTile(
             leading: Icon(Icons.photo_library),
             title: Text("Galería"),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => GalleryScreen()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => GalleryScreen()),
+              );
             },
           ),
           ListTile(
             leading: Icon(Icons.star),
             title: Text("Iconos"),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => IconsScreen()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => IconsScreen()),
+              );
             },
           ),
           ListTile(
             leading: Icon(Icons.image),
             title: Text("Imágenes"),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ImagesScreen()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ImagesScreen()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.text_fields),
+            title: Text("Textos"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => TextScreen()),
+              );
             },
           ),
         ],
