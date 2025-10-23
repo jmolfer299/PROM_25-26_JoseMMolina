@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_1/screens/challenge_screen.dart';
 import 'screens/info_screen.dart';
 import 'screens/profile_screen.dart';
 import 'screens/gallery_screen.dart';
@@ -6,6 +7,7 @@ import 'screens/icons_screen.dart';
 import 'screens/images_screen.dart';
 import 'screens/text_screen.dart';
 import 'screens/newimages_screen.dart';
+import 'screens/screen_piramide.dart';
 
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({super.key});
@@ -91,6 +93,26 @@ class DrawerMenu extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => NewImagesScreen()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.image_outlined),
+            title: Text("Imágenes en pirámide"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ImagesPiramide()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.dangerous_outlined),
+            title: Text("Challenge"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ChallengeScreen()),
               );
             },
           ),
