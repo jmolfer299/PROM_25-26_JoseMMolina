@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_1/screens/challenge_screen.dart';
+import 'package:flutter_1/screens/instagram_screen.dart';
 import 'screens/info_screen.dart';
 import 'screens/profile_screen.dart';
 import 'screens/gallery_screen.dart';
@@ -8,6 +9,7 @@ import 'screens/images_screen.dart';
 import 'screens/text_screen.dart';
 import 'screens/newimages_screen.dart';
 import 'screens/screen_piramide.dart';
+import 'screens/counter_screen.dart';
 
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({super.key});
@@ -113,6 +115,26 @@ class DrawerMenu extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => ChallengeScreen()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.countertops),
+            title: Text("Counter"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CounterScreen()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.camera),
+            title: Text("Instagram"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => InstagramScreen()),
               );
             },
           ),

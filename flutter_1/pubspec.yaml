@@ -26,4 +26,14 @@ flutter:
     - assets/image3.png
     - assets/img4.png
     - assets/img5.png
+    - assets/profile.jpg
+    - assets/javaLogo.webp
+    - assets/sql.jpg
+    - assets/python.jpg
+    - assets/html.png
+    - assets/css.png
+    - assets/js.png 
+    - assets/pascal.jpg
+    - assets/delphi.png
+    - assets/FlutterLogo.png
 
