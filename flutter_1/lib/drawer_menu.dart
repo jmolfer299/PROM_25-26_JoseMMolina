@@ -10,14 +10,18 @@ import 'screens/text_screen.dart';
 import 'screens/newimages_screen.dart';
 import 'screens/screen_piramide.dart';
 import 'screens/counter_screen.dart';
+import 'screens/colors_screen.dart';
+import 'screens/image_random_screen.dart';
 
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({super.key});
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.white,
       child: ListView(
         padding: EdgeInsets.zero,
+        physics: const AlwaysScrollableScrollPhysics(),
         children: [
           DrawerHeader(
             decoration: BoxDecoration(color: Colors.blue),
@@ -135,6 +139,26 @@ class DrawerMenu extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => InstagramScreen()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.color_lens),
+            title: Text("Colores Random"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => RandomColors()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.gamepad),
+            title: Text("Imagen Random"),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => RandomImageGame()),
               );
             },
           ),
