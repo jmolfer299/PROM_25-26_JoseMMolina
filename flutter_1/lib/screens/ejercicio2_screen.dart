@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_1/core/app_colors.dart';
 import '../drawer_menu.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -6,6 +7,9 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).brightness == Brightness.light
+          ? AppColorsLight.background
+          : AppColorsDark.background,
       drawer: DrawerMenu(),
       appBar: AppBar(title: Text("Perfil")),
       body: Center(
@@ -14,11 +18,13 @@ class ProfileScreen extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 60,
-              backgroundImage: AssetImage("assets/profile.png"), // tu imagen
+              backgroundImage: AssetImage("assets/profile.png"),
             ),
             SizedBox(height: 15),
-            Text("Jose María Molina Fdez-Crehuet",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+            Text(
+              "Jose María Molina Fdez-Crehuet",
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            ),
           ],
         ),
       ),

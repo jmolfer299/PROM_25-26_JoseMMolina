@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_1/core/app_colors.dart';
+import 'package:flutter_1/drawer_menu.dart';
 
 class ChallengeScreen extends StatelessWidget {
   const ChallengeScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).brightness == Brightness.light
+          ? AppColorsLight.background
+          : AppColorsDark.background,
+      drawer: DrawerMenu(),
+      appBar: AppBar(title: Text("Challenge")),
       body: Align(
         alignment: Alignment.topCenter,
         child: Container(
@@ -22,7 +29,7 @@ class ChallengeScreen extends StatelessWidget {
             style: TextStyle(
               fontSize: 50,
               color: Colors.blue,
-              fontWeight: FontWeight.bold, 
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),

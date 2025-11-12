@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_1/core/app_colors.dart';
 import '../drawer_menu.dart';
 
 class CounterScreen extends StatefulWidget {
@@ -32,6 +33,9 @@ class _CounterScreenState extends State<CounterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).brightness == Brightness.light
+          ? AppColorsLight.background
+          : AppColorsDark.background,
       drawer: DrawerMenu(),
       appBar: AppBar(
         title: const Center(child: Text('Contador de Pulsaciones')),

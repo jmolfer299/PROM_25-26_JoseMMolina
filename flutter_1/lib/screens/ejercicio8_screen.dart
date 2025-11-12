@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_1/core/app_colors.dart';
 import '../drawer_menu.dart';
 
 class ImagesPiramide extends StatelessWidget {
@@ -8,6 +9,9 @@ class ImagesPiramide extends StatelessWidget {
   Widget build(BuildContext context) {
     // Ejemplo de estructura
     return Scaffold(
+      backgroundColor: Theme.of(context).brightness == Brightness.light
+          ? AppColorsLight.background
+          : AppColorsDark.background,
       drawer: DrawerMenu(),
       appBar: AppBar(title: Text("Galería")),
       body: Column(
@@ -61,7 +65,7 @@ class ImagesPiramide extends StatelessWidget {
               Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [                 
+                children: [
                   Image.asset("assets/image3.png", width: 100),
                   Text("EJERCICIO"),
                   SizedBox(height: 5), // separación entre texto e imagen
@@ -79,7 +83,6 @@ class ImagesPiramide extends StatelessWidget {
               ),
             ],
           ),
-
         ],
       ),
     );

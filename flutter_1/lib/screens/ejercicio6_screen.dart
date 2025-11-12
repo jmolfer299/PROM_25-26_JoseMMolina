@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_1/core/app_colors.dart';
 import '../drawer_menu.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -24,7 +25,9 @@ class TextScreen extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              color: const Color.fromRGBO(247, 144, 144, 1),
+              color: Theme.of(context).brightness == Brightness.light
+                  ? AppColorsLight.red
+                  : AppColorsDark.red,
               alignment: Alignment.center,
               child: const Text(
                 "Texto 1",
@@ -34,7 +37,9 @@ class TextScreen extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              color: const Color.fromARGB(255, 220, 247, 144),
+              color: Theme.of(context).brightness == Brightness.light
+                  ? AppColorsLight.yellow
+                  : AppColorsDark.yellow,
               alignment: Alignment.center,
               child: const Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut laoreet dictum, enim erat dictum urna, nec dictum enim enim nec enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum enim enim nec enim. Suspendisse potenti. Nullam ac erat ante. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum enim enim nec enim. Suspendisse potenti. Nullam ac erat ante. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum enim enim nec enim. Suspendisse potenti. Nullam ac erat ante. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum enim enim nec enim. Suspendisse potenti. Nullam ac erat ante. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum enim enim nec enim. Suspendisse potenti. Nullam ac erat ante. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum enim enim nec enim. Suspendisse potenti. Nullam ac erat ante. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum enim enim nec enim. Suspendisse potenti. Nullam ac erat ante. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum enim enim nec enim. Suspendisse potenti. Nullam ac erat ante. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum enim enim nec enim. Suspendisse potenti. Nullam ac erat ante. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum enim enim nec enim. Suspendisse potenti. Nullam ac erat ante. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum enim enim nec enim. Suspendisse potenti. Nullam ac erat ante. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum enim enim nec enim. Suspendisse potenti. Nullam ac erat ante. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum enim enim nec enim. Suspendisse potenti. Nullam ac erat ante. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum enim enim nec enim. Suspendisse potenti. Nullam ac erat ante. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum enim enim nec enim. Suspendisse potenti. Nullam ac erat ante. Etiam euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, nec dictum enim enim nec enim. Suspendisse potenti. Nullam ac erat ante.",
@@ -44,13 +49,12 @@ class TextScreen extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              color: const Color.fromRGBO(247, 144, 144, 1),
+              color: Theme.of(context).brightness == Brightness.light
+                  ? AppColorsLight.red
+                  : AppColorsDark.red,
               alignment: Alignment.center,
-              child: Text(
-                "Texto 3",
-                style: lobsterStyle,
-              ),
-            ),  
+              child: Text("Texto 3", style: lobsterStyle),
+            ),
           ),
         ],
       ),

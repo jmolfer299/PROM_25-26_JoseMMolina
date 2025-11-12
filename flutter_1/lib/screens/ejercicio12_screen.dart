@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_1/core/app_colors.dart';
 import 'dart:math';
 import 'dart:async';
 import '../drawer_menu.dart';
@@ -92,83 +93,86 @@ class _RandomColors extends State<RandomColors> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: const Text('Random Colors'),
-          leading: Builder(
-            builder: (context) => IconButton(
-              icon: const Icon(Icons.menu),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-            ),
+    return Scaffold(
+      backgroundColor: Theme.of(context).brightness == Brightness.light
+          ? AppColorsLight.background
+          : AppColorsDark.background,
+      appBar: AppBar(
+        title: const Text('Random Colors'),
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
           ),
         ),
-        drawer: DrawerMenu(),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            // Temporizador
-            Container(
-              padding: const EdgeInsets.all(20),
+      ),
+      drawer: DrawerMenu(),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          // Temporizador
+          Container(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              children: [
+                Text(
+                  'Tiempo: ${timeRemaining}s',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 35,
+                    color: timeRemaining <= 10
+                        ? Colors.red
+                        : Theme.of(context).brightness == Brightness.light
+                        ? AppColorsLight.text
+                        : AppColorsDark.text,
+                  ),
+                ),
+                const SizedBox(height: 10),
+              ],
+            ),
+          ),
+
+          // Puntos
+          Text(
+            'Puntos: $points',
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+          ),
+
+          // Área de juego
+          Center(
+            child: GestureDetector(
+              onTap: gameEnded
+                  ? null
+                  : () {
+                      onGiftTap(randomName, randomColor);
+                    },
               child: Column(
                 children: [
+                  Container(width: 120, color: randomColor, height: 120),
                   Text(
-                    'Tiempo: ${timeRemaining}s',
+                    randomName,
                     style: TextStyle(
+                      color: randomColor,
+                      fontSize: 40,
                       fontWeight: FontWeight.bold,
-                      fontSize: 35,
-                      color: timeRemaining <= 10 ? Colors.red : Colors.black,
                     ),
                   ),
-                  const SizedBox(height: 10),
                 ],
               ),
             ),
+          ),
 
-            // Puntos
-            Text(
-              'Puntos: $points',
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-            ),
-
-            // Área de juego
-            Center(
-              child: GestureDetector(
-                onTap: gameEnded
-                    ? null
-                    : () {
-                        onGiftTap(randomName, randomColor);
-                      },
-                child: Column(
-                  children: [
-                    Container(width: 120, color: randomColor, height: 120),
-                    Text(
-                      randomName,
-                      style: TextStyle(
-                        color: randomColor,
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-            // Botón de reinicio
-            ElevatedButton(
-              onPressed: () {
-                _gameTimer?.cancel();
-                restartGame();
-              },
-              child: const Text('Reiniciar'),
-            ),
-          ],
-        ),
+          // Botón de reinicio
+          ElevatedButton(
+            onPressed: () {
+              _gameTimer?.cancel();
+              restartGame();
+            },
+            child: const Text('Reiniciar'),
+          ),
+        ],
       ),
     );
   }

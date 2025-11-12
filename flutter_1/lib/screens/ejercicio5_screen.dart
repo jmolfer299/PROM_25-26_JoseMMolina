@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_1/core/app_colors.dart';
 import '../drawer_menu.dart';
 
 class ImagesScreen extends StatelessWidget {
@@ -6,6 +7,9 @@ class ImagesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).brightness == Brightness.light
+        ? AppColorsLight.background
+        : AppColorsDark.background,
       drawer: DrawerMenu(),
       appBar: AppBar(title: Text("Imágenes")),
       body: Column(

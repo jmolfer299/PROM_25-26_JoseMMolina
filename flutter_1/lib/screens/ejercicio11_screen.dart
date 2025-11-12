@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_1/core/app_colors.dart';
 import 'package:flutter_1/drawer_menu.dart';
 
 class InstagramScreen extends StatelessWidget {
@@ -9,14 +10,18 @@ class InstagramScreen extends StatelessWidget {
     return Scaffold(
       drawer: DrawerMenu(),
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).brightness == Brightness.light
+            ? AppColorsLight.background
+            : AppColorsDark.background,
         elevation: 0,
         title: Row(
-          children: const [
+          children: [
             Text(
               '_josxmolinaa',
               style: TextStyle(
-                color: Colors.black,
+                color: Theme.of(context).brightness == Brightness.light
+                    ? AppColorsLight.text
+                    : AppColorsDark.text,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -148,9 +153,13 @@ class InstagramScreen extends StatelessWidget {
                     style: OutlinedButton.styleFrom(
                       side: const BorderSide(color: Colors.grey),
                     ),
-                    child: const Text(
+                    child: Text(
                       'Following',
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(
+                        color: Theme.of(context).brightness == Brightness.light
+                            ? AppColorsLight.text
+                            : AppColorsDark.text,
+                      ),
                     ),
                   ),
                 ),
@@ -161,9 +170,13 @@ class InstagramScreen extends StatelessWidget {
                     style: OutlinedButton.styleFrom(
                       side: const BorderSide(color: Colors.grey),
                     ),
-                    child: const Text(
+                    child: Text(
                       'Message',
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(
+                        color: Theme.of(context).brightness == Brightness.light
+                            ? AppColorsLight.text
+                            : AppColorsDark.text,
+                      ),
                     ),
                   ),
                 ),
@@ -174,9 +187,13 @@ class InstagramScreen extends StatelessWidget {
                     style: OutlinedButton.styleFrom(
                       side: const BorderSide(color: Colors.grey),
                     ),
-                    child: const Text(
+                    child: Text(
                       'Email',
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(
+                        color: Theme.of(context).brightness == Brightness.light
+                            ? AppColorsLight.text
+                            : AppColorsDark.text,
+                      ),
                     ),
                   ),
                 ),
@@ -187,9 +204,11 @@ class InstagramScreen extends StatelessWidget {
                     side: const BorderSide(color: Colors.grey),
                     padding: const EdgeInsets.symmetric(horizontal: 12),
                   ),
-                  child: const Icon(
+                  child: Icon(
                     Icons.keyboard_arrow_down,
-                    color: Colors.black,
+                    color: Theme.of(context).brightness == Brightness.light
+                            ? AppColorsLight.text
+                            : AppColorsDark.text,
                   ),
                 ),
               ],
@@ -363,42 +382,15 @@ class InstagramScreen extends StatelessWidget {
             mainAxisSpacing: 1,
             crossAxisSpacing: 1,
             children: [
-              Image.asset(
-                'assets/javaLogo.webp',
-                fit: BoxFit.cover,
-              ),
-              Image.asset(
-                'assets/sql.jpg',
-                fit: BoxFit.cover,
-              ),
-              Image.asset(
-                'assets/python.jpg',
-                fit: BoxFit.cover,
-              ),
-              Image.asset(
-                'assets/html.png',
-                fit: BoxFit.cover,
-              ),
-              Image.asset(
-                'assets/css.png',
-                fit: BoxFit.cover,
-              ),
-              Image.asset(
-                'assets/js.png',
-                fit: BoxFit.cover,
-              ),
-              Image.asset(
-                'assets/pascal.jpg',
-                fit: BoxFit.cover,
-              ),
-              Image.asset(
-                'assets/delphi.png',
-                fit: BoxFit.cover,
-              ),
-              Image.asset(
-                'assets/flutterLogo.png',
-                fit: BoxFit.cover,
-              ),
+              Image.asset('assets/javaLogo.webp', fit: BoxFit.cover),
+              Image.asset('assets/sql.jpg', fit: BoxFit.cover),
+              Image.asset('assets/python.jpg', fit: BoxFit.cover),
+              Image.asset('assets/html.png', fit: BoxFit.cover),
+              Image.asset('assets/css.png', fit: BoxFit.cover),
+              Image.asset('assets/js.png', fit: BoxFit.cover),
+              Image.asset('assets/pascal.jpg', fit: BoxFit.cover),
+              Image.asset('assets/delphi.png', fit: BoxFit.cover),
+              Image.asset('assets/flutterLogo.png', fit: BoxFit.cover),
             ],
           ),
         ],
