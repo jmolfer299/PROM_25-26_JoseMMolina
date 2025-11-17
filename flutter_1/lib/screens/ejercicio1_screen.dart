@@ -22,14 +22,20 @@ class InfoScreen extends StatelessWidget {
           children: [
             Text(
               "Jose Maria Molina Fdez-Crehuet",
-              style: Theme.of(context).textTheme.titleLarge,
+              style: TextStyle(
+                fontSize: 35, 
+                fontWeight: FontWeight.bold,
+                color: Theme.of(context).brightness == Brightness.light
+                        ? AppColorsLight.text
+                        : AppColorsDark.text,
+              ),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 20),
             Text(
               "https://github.com/jmolfer299/PROM_25-26_JoseMMolina",
               style: TextStyle(
-                fontSize: 18, 
+                fontSize: 20, 
                 color: Theme.of(context).colorScheme.secondary,
               ),
               textAlign: TextAlign.center,

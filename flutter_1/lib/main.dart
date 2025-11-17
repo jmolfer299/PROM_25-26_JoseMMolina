@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_1/widgets/theme_provider.dart';
-import 'screens/ejercicio1_screen.dart';
+import 'screens/ejercicio14_splash_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,11 +29,11 @@ class _MyAppState extends State<MyApp> {
       toggleTheme: _toggleTheme,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Drawer Demo',
+        title: 'Mi Aplicación Flutter',
         theme: ThemeData.light(),
         darkTheme: ThemeData.dark(),
         themeMode: _isDark ? ThemeMode.dark : ThemeMode.light,
-        home: InfoScreen(),
+        home: SplashScreen(),
       ),
     );
   }
