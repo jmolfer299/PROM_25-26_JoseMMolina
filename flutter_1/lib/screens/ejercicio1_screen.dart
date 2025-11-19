@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_1/core/app_colors.dart';
+import 'package:flutter_1/widgets/appbar_widget.dart';
 import '../drawer_menu.dart';
 
 class InfoScreen extends StatelessWidget {
   const InfoScreen({super.key});
-  
+  final String title = "Información";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    backgroundColor: Theme.of(context).brightness == Brightness.light 
-      ? AppColorsLight.background 
-      : AppColorsDark.background ,
+      backgroundColor: Theme.of(context).brightness == Brightness.light
+          ? AppColorsLight.background
+          : AppColorsDark.background,
       drawer: DrawerMenu(),
-      appBar: AppBar(
-        title: Text("Información"),
-      ),
+      appBar: AppbarWidget(title: title),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -23,11 +22,11 @@ class InfoScreen extends StatelessWidget {
             Text(
               "Jose Maria Molina Fdez-Crehuet",
               style: TextStyle(
-                fontSize: 35, 
+                fontSize: 35,
                 fontWeight: FontWeight.bold,
                 color: Theme.of(context).brightness == Brightness.light
-                        ? AppColorsLight.text
-                        : AppColorsDark.text,
+                    ? AppColorsLight.text
+                    : AppColorsDark.text,
               ),
               textAlign: TextAlign.center,
             ),
@@ -35,7 +34,7 @@ class InfoScreen extends StatelessWidget {
             Text(
               "https://github.com/jmolfer299/PROM_25-26_JoseMMolina",
               style: TextStyle(
-                fontSize: 20, 
+                fontSize: 20,
                 color: Theme.of(context).colorScheme.secondary,
               ),
               textAlign: TextAlign.center,

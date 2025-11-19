@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_1/core/app_colors.dart';
+import 'package:flutter_1/widgets/appbar_widget.dart';
 import '../drawer_menu.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -7,20 +8,17 @@ class TextScreen extends StatelessWidget {
   const TextScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    // Safe call to GoogleFonts.lobster: if it throws for any reason, fall back to a
-    // default TextStyle so the screen doesn't crash at runtime.
     final TextStyle lobsterStyle = (() {
       try {
         return GoogleFonts.lobster(fontSize: 20);
       } catch (e) {
-        // Could log the error if needed: debugPrint('GoogleFonts error: $e');
         return const TextStyle(fontSize: 20);
       }
     })();
 
     return Scaffold(
       drawer: DrawerMenu(),
-      appBar: AppBar(title: const Text("Textos")),
+      appBar: AppbarWidget(title: "Textos"),
       body: Column(
         children: [
           Expanded(

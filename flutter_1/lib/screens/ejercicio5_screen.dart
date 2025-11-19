@@ -15,11 +15,11 @@ class ImagesScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset("assets/image1.png", height: 80),
-          Image.asset("assets/image2.png", height: 80),
-          Image.asset("assets/image3.png", height: 80),
-          Image.asset("assets/img4.png", height: 80),
-          Image.asset("assets/img5.png", height: 80),
+          Image.asset("assets/image1.png", width: 200),
+          Image.asset("assets/image2.png", width: 200),
+          Image.asset("assets/image3.png", width: 200),
+          Image.asset("assets/img4.png", width: 200),
+          Image.asset("assets/img5.png", width: 200),
         ],
       ),
     );

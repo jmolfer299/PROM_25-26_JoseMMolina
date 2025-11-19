@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_1/core/app_colors.dart';
+import 'package:flutter_1/widgets/appbar_widget.dart';
 import 'dart:math';
 import 'dart:async';
 import '../drawer_menu.dart';
@@ -97,17 +98,7 @@ class _RandomColors extends State<RandomColors> {
       backgroundColor: Theme.of(context).brightness == Brightness.light
           ? AppColorsLight.background
           : AppColorsDark.background,
-      appBar: AppBar(
-        title: const Text('Random Colors'),
-        leading: Builder(
-          builder: (context) => IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-          ),
-        ),
-      ),
+      appBar: AppbarWidget(title: "Juego de Colores"),
       drawer: DrawerMenu(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

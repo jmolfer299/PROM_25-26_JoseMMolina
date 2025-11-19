@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_1/core/app_colors.dart';
+import 'package:flutter_1/widgets/appbar_widget.dart';
 import '../drawer_menu.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -11,7 +12,7 @@ class ProfileScreen extends StatelessWidget {
           ? AppColorsLight.background
           : AppColorsDark.background,
       drawer: DrawerMenu(),
-      appBar: AppBar(title: Text("Perfil")),
+      appBar: AppbarWidget(title: "Perfil"),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

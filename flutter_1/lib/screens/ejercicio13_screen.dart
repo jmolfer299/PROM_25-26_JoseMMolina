@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_1/core/app_colors.dart';
+import 'package:flutter_1/widgets/appbar_widget.dart';
 import 'dart:math';
 import 'dart:async';
 import '../drawer_menu.dart';
@@ -89,11 +90,7 @@ class _RandomImageGameState extends State<RandomImageGame> {
           ? AppColorsLight.background
           : AppColorsDark.background,
       drawer: DrawerMenu(),
-      appBar: AppBar(
-        title: Text('Juego de Reflejos'),
-        backgroundColor: Colors.black,
-        foregroundColor: Colors.white,
-      ),
+      appBar: AppbarWidget(title: "Juego imagen random"),
       body: Stack(
         children: [
           // Información superior
