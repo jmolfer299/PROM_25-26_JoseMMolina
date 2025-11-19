@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_1/widgets/theme_provider.dart';
-import 'screens/ejercicio14_splash_screen.dart';
+import 'widgets/splash_screen.dart';
 
 void main() {
   runApp(MyApp());
