@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_1/core/app_colors.dart';
 import 'package:flutter_1/drawer_menu.dart';
+import 'package:url_launcher/url_launcher.dart';
+// ignore_for_file: depend_on_referenced_packages
 
-class InstagramScreen extends StatelessWidget {
+class InstagramScreen extends StatefulWidget {
   const InstagramScreen({super.key});
 
+  @override
+  State<InstagramScreen> createState() => _InstagramScreenState();
+}
+
+class _InstagramScreenState extends State<InstagramScreen> {
+  String textoFollow = "Follow";
+  Color colorFollow = Colors.blue;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,15 +107,15 @@ class InstagramScreen extends StatelessWidget {
                         ],
                       ),
                       Column(
-                        children: const [
-                          Text(
+                        children: [
+                          const Text(
                             '883',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          Text('Following', style: TextStyle(fontSize: 14)),
+                          Text("Following", style: TextStyle(fontSize: 14)),
                         ],
                       ),
                     ],
@@ -119,7 +128,7 @@ class InstagramScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text(
                   'Jose Mª Molina Fdez-Crehuet',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
@@ -130,9 +139,21 @@ class InstagramScreen extends StatelessWidget {
                 ),
                 Text('Ies Pablo Picasso', style: TextStyle(fontSize: 14)),
                 Text('Málaga, España', style: TextStyle(fontSize: 14)),
-                Text(
-                  'https://github.com/jmolfer299',
-                  style: TextStyle(fontSize: 14, color: Colors.blue),
+                TextButton(
+                  child: Text(
+                    'https://github.com/jmolfer299',
+                    style: TextStyle(fontSize: 14, color: Colors.blue),
+                  ),
+                  onPressed: () async {
+                    final Uri url = Uri.parse(
+                      'https://github.com/jmolfer299/PROM_25-26_JoseMMolina',
+                    );
+                    if (await canLaunchUrl(url)) {
+                      await launchUrl(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
                 ),
                 SizedBox(height: 4),
                 Text(
@@ -149,12 +170,26 @@ class InstagramScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: OutlinedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        if (textoFollow == "Follow") {
+                          textoFollow = "Following";
+                          colorFollow = Colors.white;
+                        } else {
+                          textoFollow = "Follow";
+                          colorFollow = Colors.blue;
+                        }
+                      });
+                    },
                     style: OutlinedButton.styleFrom(
-                      side: const BorderSide(color: Colors.grey),
+                      side: BorderSide(color: Colors.grey),
+                      backgroundColor:
+                          Theme.of(context).brightness == Brightness.light
+                          ? colorFollow
+                          : Colors.black,
                     ),
                     child: Text(
-                      'Following',
+                      textoFollow,
                       style: TextStyle(
                         color: Theme.of(context).brightness == Brightness.light
                             ? AppColorsLight.text
@@ -207,8 +242,8 @@ class InstagramScreen extends StatelessWidget {
                   child: Icon(
                     Icons.keyboard_arrow_down,
                     color: Theme.of(context).brightness == Brightness.light
-                            ? AppColorsLight.text
-                            : AppColorsDark.text,
+                        ? AppColorsLight.text
+                        : AppColorsDark.text,
                   ),
                 ),
               ],
@@ -232,7 +267,7 @@ class InstagramScreen extends StatelessWidget {
                         height: 65,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.purple.withOpacity(0.3),
+                          color: Colors.purple,
                         ),
                         child: const Icon(
                           Icons.play_circle_outline,
@@ -254,7 +289,7 @@ class InstagramScreen extends StatelessWidget {
                         height: 65,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.purple.withOpacity(0.3),
+                          color: Colors.purple,
                         ),
                         child: const Icon(
                           Icons.play_circle_outline,
@@ -276,7 +311,7 @@ class InstagramScreen extends StatelessWidget {
                         height: 65,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.purple.withOpacity(0.3),
+                          color: Colors.purple,
                         ),
                         child: const Icon(
                           Icons.play_circle_outline,
@@ -298,7 +333,7 @@ class InstagramScreen extends StatelessWidget {
                         height: 65,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.purple.withOpacity(0.3),
+                          color: Colors.purple,
                         ),
                         child: const Icon(
                           Icons.play_circle_outline,
@@ -320,7 +355,7 @@ class InstagramScreen extends StatelessWidget {
                         height: 65,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.purple.withOpacity(0.3),
+                          color: Colors.purple,
                         ),
                         child: const Icon(
                           Icons.play_circle_outline,

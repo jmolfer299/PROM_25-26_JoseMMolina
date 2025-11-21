@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_1/core/app_colors.dart';
+import 'package:flutter_1/screens/ejercicio11_instagram_screen.dart';
 import 'package:flutter_1/screens/ejercicio9_screen.dart';
-import 'package:flutter_1/screens/ejercicio11_screen.dart';
+
 import 'package:flutter_1/widgets/theme_provider.dart';
 import 'screens/ejercicio1_screen.dart';
 import 'screens/ejercicio2_screen.dart';
