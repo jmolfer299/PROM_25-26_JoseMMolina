@@ -12,14 +12,18 @@ class ImagesScreen extends StatelessWidget {
         : AppColorsDark.background,
       drawer: DrawerMenu(),
       appBar: AppBar(title: Text("Imágenes")),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: ListView(
         children: [
-          Image.asset("assets/image1.png", width: 200),
-          Image.asset("assets/image2.png", width: 200),
-          Image.asset("assets/image3.png", width: 200),
-          Image.asset("assets/img4.png", width: 200),
-          Image.asset("assets/img5.png", width: 200),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset("assets/image1.png", width: 150),
+              Image.asset("assets/image2.png", width: 150),
+              Image.asset("assets/image3.png", width: 150),
+              Image.asset("assets/img4.png", width: 150),
+              Image.asset("assets/img5.png", width: 150),
+            ],
+          ),
         ],
       ),
     );

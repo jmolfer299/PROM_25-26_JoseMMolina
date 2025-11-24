@@ -14,10 +14,15 @@ class InstagramScreen extends StatefulWidget {
 class _InstagramScreenState extends State<InstagramScreen> {
   String textoFollow = "Follow";
   Color colorFollow = Colors.blue;
+  Color textoColor = Colors.white;
+  int followers = 1434;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: DrawerMenu(),
+      backgroundColor: Theme.of(context).brightness == Brightness.light
+          ? AppColorsLight.background
+          : AppColorsDark.background,
       appBar: AppBar(
         backgroundColor: Theme.of(context).brightness == Brightness.light
             ? AppColorsLight.background
@@ -95,9 +100,9 @@ class _InstagramScreenState extends State<InstagramScreen> {
                         ],
                       ),
                       Column(
-                        children: const [
+                        children: [
                           Text(
-                            '1434',
+                            followers.toString(),
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -175,9 +180,13 @@ class _InstagramScreenState extends State<InstagramScreen> {
                         if (textoFollow == "Follow") {
                           textoFollow = "Following";
                           colorFollow = Colors.white;
+                          textoColor = AppColorsLight.text;
+                          followers += 1;
                         } else {
+                          textoColor = AppColorsDark.text;
                           textoFollow = "Follow";
                           colorFollow = Colors.blue;
+                          followers -= 1;
                         }
                       });
                     },
@@ -186,13 +195,13 @@ class _InstagramScreenState extends State<InstagramScreen> {
                       backgroundColor:
                           Theme.of(context).brightness == Brightness.light
                           ? colorFollow
-                          : Colors.black,
+                          : AppColorsDark.background,
                     ),
                     child: Text(
                       textoFollow,
                       style: TextStyle(
                         color: Theme.of(context).brightness == Brightness.light
-                            ? AppColorsLight.text
+                            ? textoColor
                             : AppColorsDark.text,
                       ),
                     ),
