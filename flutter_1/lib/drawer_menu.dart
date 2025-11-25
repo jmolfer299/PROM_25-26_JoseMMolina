@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_1/core/app_colors.dart';
 import 'package:flutter_1/screens/ejercicio11_instagram_screen.dart';
+import 'package:flutter_1/screens/ejercicio14_screen_random_number_form.dart';
 import 'package:flutter_1/screens/ejercicio9_screen.dart';
 
 import 'package:flutter_1/widgets/theme_provider.dart';
@@ -191,6 +192,17 @@ class DrawerMenu extends StatelessWidget {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => RandomImageGame()),
+                  ),
+                ),
+                ListTile(
+                  leading: Icon(Icons.numbers, color: textColor),
+                  title: Text(
+                    "Ejercicio 14",
+                    style: AppTextStyles.small.copyWith(color: textColor),
+                  ),
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RandomNumberForm()),
                   ),
                 ),
               ],
