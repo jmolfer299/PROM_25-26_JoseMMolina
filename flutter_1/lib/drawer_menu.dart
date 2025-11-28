@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_1/core/app_colors.dart';
 import 'package:flutter_1/screens/ejercicio11_instagram_screen.dart';
 import 'package:flutter_1/screens/ejercicio14_screen_random_number_form.dart';
+import 'package:flutter_1/screens/ejercicio15_screen.dart';
 import 'package:flutter_1/screens/ejercicio9_screen.dart';
 
 import 'package:flutter_1/widgets/theme_provider.dart';
@@ -203,6 +204,17 @@ class DrawerMenu extends StatelessWidget {
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => RandomNumberForm()),
+                  ),
+                ),
+                ListTile(
+                  leading: Icon(Icons.edit, color: textColor),
+                  title: Text(
+                    "Ejercicio 15",
+                    style: AppTextStyles.small.copyWith(color: textColor),
+                  ),
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FormsScreen()),
                   ),
                 ),
               ],

@@ -25,7 +25,6 @@ class AppTextStyles {
   static const TextStyle title = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.bold,
-    
   );
   
   static const TextStyle medium = TextStyle(
